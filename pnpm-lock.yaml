@@ -21,6 +21,9 @@ importers:
         specifier: ^18.2.0
         version: 18.3.1(react@18.3.1)
     devDependencies:
+      '@types/pixi.js':
+        specifier: ^5.0.0
+        version: 5.0.0
       '@types/react':
         specifier: ^18.2.66
         version: 18.3.2
@@ -686,6 +689,10 @@ packages:
 
   '@types/estree@1.0.5':
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
+
+  '@types/pixi.js@5.0.0':
+    resolution: {integrity: sha512-yZqQBR043lRBlBZci2cx6hgmX0fvBfYIqFm6VThlnueXEjitxd3coy+BGsqsZ7+ary7O//+ks4aJRhC5MJoHqA==}
+    deprecated: This is a stub types definition. pixi.js provides its own type definitions, so you do not need this installed.
 
   '@types/prop-types@15.7.12':
     resolution: {integrity: sha512-5zvhXYtRNRluoE/jAp4GVsSduVUzNWKkOZrCDBWYtE7biZywwdC2AcEzg+cSMLFRfVgeAFqpfNabiPjxFddV1Q==}
@@ -2020,6 +2027,10 @@ snapshots:
   '@types/earcut@2.1.4': {}
 
   '@types/estree@1.0.5': {}
+
+  '@types/pixi.js@5.0.0':
+    dependencies:
+      pixi.js: 7.4.2
 
   '@types/prop-types@15.7.12': {}
 

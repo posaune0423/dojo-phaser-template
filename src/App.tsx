@@ -1,49 +1,62 @@
 import './App.css'
-import { useMemo } from 'react'
+import { useState } from 'react'
 
-import { BlurFilter, TextStyle } from 'pixi.js'
-import { Stage, Container, Sprite, Text } from '@pixi/react'
+import { TextStyle } from 'pixi.js'
+import { Container, Sprite, Text } from '@pixi/react'
 import { useWindowSize } from './hooks/useWindowSize'
+import { CustomStage } from './components/Stage'
+import { Player } from './components/Player'
 
-const bunnyUrl = 'https://pixijs.io/pixi-react/img/bunny.png'
+const playerUrl = 'https://pixijs.com/assets/bunny.png'
+const obstacleUrl = 'https://pixijs.com/assets/eggHead.png'
 
 export const App = () => {
-  const blurFilter = useMemo(() => new BlurFilter(2), [])
+  const [playerY, setPlayerY] = useState(300)
+  const [obstacles, setObstacles] = useState([{ x: 500, y: 300 }])
+  const [gameOver, setGameOver] = useState(false)
+  const [score, setScore] = useState(0)
+
   const [width, height] = useWindowSize()
 
-  return (
-    <Stage
-      options={{
-        background: 0x1099bb,
-        antialias: true,
-      }}
-      width={width}
-      height={height}
-    >
-      <Container x={width / 2} y={height / 2}>
-        <Sprite image={bunnyUrl} x={-100} y={-50} />
-        <Sprite image={bunnyUrl} x={100} y={-50} />
-        <Sprite image={bunnyUrl} x={0} y={0} />
+  const handleJump = () => {
+    if (!gameOver) {
+      setPlayerY(playerY - 50)
+    }
+  }
 
-        <Text
-          text="Hello World"
-          anchor={0.5}
-          x={20}
-          y={100}
-          filters={[blurFilter]}
-          style={
-            new TextStyle({
-              align: 'center',
-              fill: '0xffffff',
-              fontSize: 50,
-              letterSpacing: 20,
-              dropShadow: true,
-              dropShadowColor: '#E72264',
-              dropShadowDistance: 6,
-            })
-          }
+  return (
+    <CustomStage>
+      <Container interactive={true} pointerdown={handleJump}>
+        <Player
+          image={playerUrl}
+          x={100}
+          y={playerY}
+          playerY={playerY}
+          obstacles={obstacles}
+          setObstacles={setObstacles}
+          score={score}
+          setScore={setScore}
+          gameOver={gameOver}
+          setGameOver={setGameOver}
         />
+        {obstacles.map((obstacle, index) => (
+          <Sprite
+            key={index}
+            image={obstacleUrl}
+            x={obstacle.x}
+            y={obstacle.y}
+          />
+        ))}
+        {gameOver && (
+          <Text
+            text={`Game Over! Score: ${score}`}
+            x={width / 2}
+            y={height / 2}
+            anchor={0.5}
+            style={new TextStyle({ fill: '#ffffff', fontSize: 24 })}
+          />
+        )}
       </Container>
-    </Stage>
+    </CustomStage>
   )
 }
