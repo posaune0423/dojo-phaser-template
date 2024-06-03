@@ -13,6 +13,7 @@ export const Game = () => {
   const [width, height] = useWindowSize()
   const [heroX] = useState(100)
   const [heroY, setHeroY] = useState(600)
+  const [jumpPower, setJumpPower] = useState(0)
 
   const handleCollision = () => {
     platforms.forEach((platform) => {
@@ -27,8 +28,17 @@ export const Game = () => {
     })
   }
 
+  const gravity = (delta: number) => {
+    setHeroY((prev) => prev + delta)
+  }
+
+  const jumping = (delta: number) => {
+    setJumpPower((prev) => prev - delta)
+    setHeroY((prev) => prev - delta)
+  }
+
   const handleJump = () => {
-    setHeroY((prev) => prev - 100)
+    setJumpPower(100)
   }
 
   return (
@@ -51,6 +61,9 @@ export const Game = () => {
           x={heroX}
           y={heroY}
           textureUrl="https://pixijs.io/pixi-react/img/bunny.png"
+          jumpPower={jumpPower}
+          gravity={gravity}
+          jumping={jumping}
           onCollision={() => handleCollision()}
           onJump={() => handleJump()}
         />
