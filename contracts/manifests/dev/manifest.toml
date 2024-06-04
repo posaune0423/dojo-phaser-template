@@ -32,19 +32,6 @@ computed = []
 init_calldata = []
 name = "contracts::systems::actions::actions"
 
-[[contracts]]
-kind = "DojoContract"
-address = "0x6147eca2ce91f6a18735b44227c7b483f012ba1df2069d8253ce32224eb34f4"
-class_hash = "0x6241fe0afb7dd8fa11909c7acc9ba980d569ec227abb5389ce061e7a0b4e6d5"
-original_class_hash = "0x6241fe0afb7dd8fa11909c7acc9ba980d569ec227abb5389ce061e7a0b4e6d5"
-base_class_hash = "0x22f3e55b61d86c2ac5239fa3b3b8761f26b9a5c0b5f61ddbd5d756ced498b46"
-abi = "manifests/dev/abis/deployments/contracts/dojo_starter_systems_actions_actions.json"
-reads = []
-writes = []
-computed = []
-init_calldata = []
-name = "dojo_starter::systems::actions::actions"
-
 [[models]]
 kind = "DojoModel"
 class_hash = "0x2c30024598687c5ba6a4ff240c324bdbd0d4245f1dbc696b4a01aaadd6db739"
@@ -73,45 +60,6 @@ class_hash = "0x146749a4239a67e785d91f4b68f5a0f9d591e34b9d14568035aa6463bed5281"
 original_class_hash = "0x146749a4239a67e785d91f4b68f5a0f9d591e34b9d14568035aa6463bed5281"
 abi = "manifests/dev/abis/deployments/models/contracts_models_position_position.json"
 name = "contracts::models::position::position"
-
-[[models.members]]
-name = "player"
-type = "ContractAddress"
-key = true
-
-[[models.members]]
-name = "vec"
-type = "Vec2"
-key = false
-
-[[models]]
-kind = "DojoModel"
-class_hash = "0x4cccc308e899b0db11f3e47bcc3bf555d348102e1d89c85e8ba72f5f1098107"
-original_class_hash = "0x4cccc308e899b0db11f3e47bcc3bf555d348102e1d89c85e8ba72f5f1098107"
-abi = "manifests/dev/abis/deployments/models/dojo_starter_models_moves_moves.json"
-name = "dojo_starter::models::moves::moves"
-
-[[models.members]]
-name = "player"
-type = "ContractAddress"
-key = true
-
-[[models.members]]
-name = "remaining"
-type = "u8"
-key = false
-
-[[models.members]]
-name = "last_direction"
-type = "Direction"
-key = false
-
-[[models]]
-kind = "DojoModel"
-class_hash = "0x4312e0e9fa6d912c293311798591e5022744a5fbebefc5ddfcfcc9b7c0c9be1"
-original_class_hash = "0x4312e0e9fa6d912c293311798591e5022744a5fbebefc5ddfcfcc9b7c0c9be1"
-abi = "manifests/dev/abis/deployments/models/dojo_starter_models_position_position.json"
-name = "dojo_starter::models::position::position"
 
 [[models.members]]
 name = "player"

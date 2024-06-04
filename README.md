@@ -1,6 +1,7 @@
 # react-2d-game
 
 ## Getting Started
+
 2. Check versions of Scarb and Dojo and Cairo
 
 ```zsh
@@ -16,25 +17,32 @@ cairo: 2.6.3 (https://crates.io/crates/cairo-lang-compiler/2.6.3)
 sierra: 1.5.0
 ```
 
-
-1. Build contracts
-```zsh
-cd contracts
-sozo build
-```
-2. Run Katana on http://0.0.0.0:5050
+1. Run Katana on http://0.0.0.0:5050
 
 ```zsh
-katana --disable-fee
+katana --disable-fee --allowed-origins "*"
 ```
 
 3. Apply migrations
+
 ```zsh
-sozo migrate apply
+scarb run migrate
 ```
 
 4. Run indexer on http://0.0.0.0:8080
 
 ```zsh
 torii --world 0x009f1c624eea5ad97ea4bee805b2c46d4db96c8bee88a061a1905e67e5683cc1 --allowed-origins "*"
+```
+
+5. Run spawn
+
+```zsh
+scarb run spawn
+```
+
+5. Run move
+
+```zsh
+scarb run move
 ```

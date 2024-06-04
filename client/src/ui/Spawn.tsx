@@ -12,10 +12,12 @@ export const Spawn = () => {
 
     useEffect(() => {
         if (isDeploying) {
+            console.log(isDeploying)
             return;
         }
 
         if (account) {
+            console.log(account)
             return;
         }
     }, [account]);
