@@ -6,7 +6,7 @@ on:
 
 defaults:
   run:
-    working-directory: contracts
+    working-directory: packages/contracts
 
 jobs:
   sozo-test:
