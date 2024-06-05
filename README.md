@@ -2,7 +2,9 @@
 
 ## Getting Started
 
-2. Check versions of Scarb and Dojo and Cairo
+### Contracts
+
+1. Check versions of Scarb and Dojo and Cairo
 
 ```zsh
 sozo --verison
@@ -17,7 +19,7 @@ cairo: 2.6.3 (https://crates.io/crates/cairo-lang-compiler/2.6.3)
 sierra: 1.5.0
 ```
 
-1. Run Katana on http://0.0.0.0:5050
+2. Run Katana on http://0.0.0.0:5050
 
 ```zsh
 katana --disable-fee --allowed-origins "*"
@@ -41,10 +43,24 @@ torii --world 0x009f1c624eea5ad97ea4bee805b2c46d4db96c8bee88a061a1905e67e5683cc1
 scarb run spawn
 ```
 
-5. Run move
+6. Run move
 
 ```zsh
 scarb run move
+```
+
+### Frontend
+
+1. Install dependencies
+
+```zsh
+pnpm install
+```
+
+2. Run the frontend
+
+```zsh
+pnpm run dev
 ```
 
 ## Trouble Shooting
@@ -54,4 +70,4 @@ scarb run move
   - Then remove `contracts/manifests` and `sozo migrate plan` to re-generate them
   - Then in the `client` dir, run `pn components` to re-generate clientComponents
 - When using alpha verison of Dojo, Language Server may not work correctly
-  - downgrade to beta version of Dojo
+  - Downgrade to beta version of Dojo
