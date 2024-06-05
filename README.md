@@ -1,4 +1,4 @@
-# react-2d-game
+# Dojo Phaser Template
 
 ## Getting Started
 
