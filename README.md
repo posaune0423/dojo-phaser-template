@@ -47,10 +47,11 @@ scarb run spawn
 scarb run move
 ```
 
-
 ## Trouble Shooting
 
 - When I change dir name dojo-starter to contracts
   - I should've rename `dojo-starter` to `contracts` in source files
   - Then remove `contracts/manifests` and `sozo migrate plan` to re-generate them
   - Then in the `client` dir, run `pn components` to re-generate clientComponents
+- When using alpha verison of Dojo, Language Server may not work correctly
+  - downgrade to beta version of Dojo
