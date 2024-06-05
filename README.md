@@ -7,7 +7,7 @@
 1. Check versions of Scarb and Dojo and Cairo
 
 ```zsh
-sozo --verison
+sozo --version
 sozo 0.7.0-alpha.5
 scarb: 2.6.3
 cairo: 2.6.3
