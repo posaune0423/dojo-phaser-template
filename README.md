@@ -1,31 +1,57 @@
-# React + TypeScript + Vite
-inspired by https://github.com/gamedevland/runner
+# Dojo Phaser Template
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Getting Started
 
-Currently, two official plugins are available:
+2. Check versions of Scarb and Dojo and Cairo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```zsh
+sozo --verison
+sozo 0.7.0-alpha.5
+scarb: 2.6.3
+cairo: 2.6.3
+sierra: 1.5.0
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+scarb --version
+scarb 2.6.3 (e6f921dfd 2024-03-13)
+cairo: 2.6.3 (https://crates.io/crates/cairo-lang-compiler/2.6.3)
+sierra: 1.5.0
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+1. Run Katana on http://0.0.0.0:5050
+
+```zsh
+katana --disable-fee --allowed-origins "*"
+```
+
+3. Apply migrations
+
+```zsh
+scarb run migrate
+```
+
+4. Run indexer on http://0.0.0.0:8080
+
+```zsh
+torii --world 0x009f1c624eea5ad97ea4bee805b2c46d4db96c8bee88a061a1905e67e5683cc1 --allowed-origins "*"
+```
+
+5. Run spawn
+
+```zsh
+scarb run spawn
+```
+
+5. Run move
+
+```zsh
+scarb run move
+```
+
+## Trouble Shooting
+
+- When I change dir name dojo-starter to contracts
+  - I should've rename `dojo-starter` to `contracts` in source files
+  - Then remove `contracts/manifests` and `sozo migrate plan` to re-generate them
+  - Then in the `client` dir, run `pn components` to re-generate clientComponents
+- When using alpha verison of Dojo, Language Server may not work correctly
+  - downgrade to beta version of Dojo
