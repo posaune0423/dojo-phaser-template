@@ -1,0 +1,17 @@
+kind = "DojoModel"
+class_hash = "0x339376ed8077ac446f324b90dfa7d0ab854c5b163115b73c934e7636cc3a051"
+original_class_hash = "0x339376ed8077ac446f324b90dfa7d0ab854c5b163115b73c934e7636cc3a051"
+abi = "manifests/dev/base/abis/models/dojo_phaser-Position-87da7cfe.json"
+tag = "dojo_phaser-Position"
+qualified_path = "dojo_phaser::models::position"
+manifest_name = "dojo_phaser-Position-87da7cfe"
+
+[[members]]
+name = "player"
+type = "ContractAddress"
+key = true
+
+[[members]]
+name = "vec"
+type = "Vec2"
+key = false

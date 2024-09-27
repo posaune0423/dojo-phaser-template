@@ -1,0 +1,129 @@
+[world]
+kind = "WorldContract"
+class_hash = "0x6f4515274ee23404789c3351a77107d0ec07508530119822046600ca6948d6e"
+original_class_hash = "0x6f4515274ee23404789c3351a77107d0ec07508530119822046600ca6948d6e"
+abi = "manifests/dev/deployment/abis/dojo-world.json"
+address = "0x206c8aee76f1def0e4a0d289fbbe8e0b7074ed696806fed71d87c5c63241e99"
+transaction_hash = "0x78fdef56419f48543229b50f43cb84c8fa4fabf1f45dfe2179cf7547ed4e0e"
+block_number = 3
+seed = "dojo_phaser"
+manifest_name = "dojo-world"
+
+[world.metadata]
+profile_name = "dev"
+rpc_url = "http://localhost:5050/"
+
+[base]
+kind = "Class"
+class_hash = "0x2427dd10a58850ac9a5ca6ce04b7771b05330fd18f2e481831ad903b969e6b2"
+original_class_hash = "0x2427dd10a58850ac9a5ca6ce04b7771b05330fd18f2e481831ad903b969e6b2"
+abi = "manifests/dev/deployment/abis/dojo-base.json"
+tag = "dojo-base"
+manifest_name = "dojo-base"
+
+[[contracts]]
+kind = "DojoContract"
+address = "0x46889f76491dc5d4cf062cba7cb9cf6913d9991ec1f96741cc556ed579e21be"
+class_hash = "0x75552c6caa376a3dbc21f64a862a0020538c58a4a58f6e34e664455fe7df26"
+original_class_hash = "0x75552c6caa376a3dbc21f64a862a0020538c58a4a58f6e34e664455fe7df26"
+base_class_hash = "0x2427dd10a58850ac9a5ca6ce04b7771b05330fd18f2e481831ad903b969e6b2"
+abi = "manifests/dev/deployment/abis/contracts/dojo_phaser-actions-54ace01d.json"
+reads = []
+writes = [
+    "dojo_phaser-Moves",
+    "dojo_phaser-Position",
+    "dojo_phaser-DirectionsAvailable",
+]
+init_calldata = []
+tag = "dojo_phaser-actions"
+systems = [
+    "spawn",
+    "move",
+]
+manifest_name = "dojo_phaser-actions-54ace01d"
+
+[[models]]
+kind = "DojoModel"
+class_hash = "0x3369eb4e94a6928022a020a178baac042f1d8b89c1edc83b0471e91fa90ab57"
+original_class_hash = "0x3369eb4e94a6928022a020a178baac042f1d8b89c1edc83b0471e91fa90ab57"
+abi = "manifests/dev/deployment/abis/models/dojo_phaser-DirectionsAvailable-41a16718.json"
+tag = "dojo_phaser-DirectionsAvailable"
+qualified_path = "dojo_phaser::models::directions_available"
+manifest_name = "dojo_phaser-DirectionsAvailable-41a16718"
+
+[[models.members]]
+name = "player"
+type = "ContractAddress"
+key = true
+
+[[models.members]]
+name = "directions"
+type = "Array<Direction>"
+key = false
+
+[[models]]
+kind = "DojoModel"
+class_hash = "0x37b1bd0b37ecaa7387fa886b2050ad0db35d3d0201f7835eed09d869136dd5d"
+original_class_hash = "0x37b1bd0b37ecaa7387fa886b2050ad0db35d3d0201f7835eed09d869136dd5d"
+abi = "manifests/dev/deployment/abis/models/dojo_phaser-Moved-1fa16895.json"
+tag = "dojo_phaser-Moved"
+qualified_path = "dojo_phaser::systems::actions::actions::moved"
+manifest_name = "dojo_phaser-Moved-1fa16895"
+
+[[models.members]]
+name = "player"
+type = "ContractAddress"
+key = true
+
+[[models.members]]
+name = "direction"
+type = "Direction"
+key = false
+
+[[models]]
+kind = "DojoModel"
+class_hash = "0x6c89abf72a3de00201b40cc7670dcdcb91623b4c781d7c9a1808c67240950ae"
+original_class_hash = "0x6c89abf72a3de00201b40cc7670dcdcb91623b4c781d7c9a1808c67240950ae"
+abi = "manifests/dev/deployment/abis/models/dojo_phaser-Moves-418baf3b.json"
+tag = "dojo_phaser-Moves"
+qualified_path = "dojo_phaser::models::moves"
+manifest_name = "dojo_phaser-Moves-418baf3b"
+
+[[models.members]]
+name = "player"
+type = "ContractAddress"
+key = true
+
+[[models.members]]
+name = "remaining"
+type = "u8"
+key = false
+
+[[models.members]]
+name = "last_direction"
+type = "Direction"
+key = false
+
+[[models.members]]
+name = "can_move"
+type = "bool"
+key = false
+
+[[models]]
+kind = "DojoModel"
+class_hash = "0x339376ed8077ac446f324b90dfa7d0ab854c5b163115b73c934e7636cc3a051"
+original_class_hash = "0x339376ed8077ac446f324b90dfa7d0ab854c5b163115b73c934e7636cc3a051"
+abi = "manifests/dev/deployment/abis/models/dojo_phaser-Position-87da7cfe.json"
+tag = "dojo_phaser-Position"
+qualified_path = "dojo_phaser::models::position"
+manifest_name = "dojo_phaser-Position-87da7cfe"
+
+[[models.members]]
+name = "player"
+type = "ContractAddress"
+key = true
+
+[[models.members]]
+name = "vec"
+type = "Vec2"
+key = false

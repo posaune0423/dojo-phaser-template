@@ -1,18 +1,16 @@
 #[cfg(test)]
 mod tests {
-    use starknet::class_hash::Felt252TryIntoClassHash;
     // import world dispatcher
     use dojo::world::{IWorldDispatcher, IWorldDispatcherTrait};
     // import test utils
-    use dojo::test_utils::{spawn_test_world, deploy_contract};
+    use dojo::utils::test::{spawn_test_world, deploy_contract};
     // import test utils
-    use contracts::{
+    use dojo_phaser::{
         systems::{actions::{actions, IActionsDispatcher, IActionsDispatcherTrait}},
-        models::{position::{Position, Vec2, position}, moves::{Moves, Direction, moves}}
+        models::{{Position, Vec2, position, Moves, Direction, moves}}
     };
 
     #[test]
-    #[available_gas(30000000)]
     fn test_move() {
         // caller
         let caller = starknet::contract_address_const::<0x0>();
@@ -21,12 +19,14 @@ mod tests {
         let mut models = array![position::TEST_CLASS_HASH, moves::TEST_CLASS_HASH];
 
         // deploy world with models
-        let world = spawn_test_world(models);
+        let world = spawn_test_world(["dojo_starter"].span(), models.span());
 
         // deploy systems contract
         let contract_address = world
-            .deploy_contract('salt', actions::TEST_CLASS_HASH.try_into().unwrap(), array![].span());
+            .deploy_contract('salt', actions::TEST_CLASS_HASH.try_into().unwrap());
         let actions_system = IActionsDispatcher { contract_address };
+
+        world.grant_writer(dojo::utils::bytearray_hash(@"dojo_starter"), contract_address);
 
         // call spawn()
         actions_system.spawn();

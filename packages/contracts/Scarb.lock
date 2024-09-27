@@ -2,21 +2,21 @@
 version = 1
 
 [[package]]
-name = "contracts"
+name = "dojo"
+version = "1.0.0-alpha.4"
+source = "git+https://github.com/dojoengine/dojo?tag=v1.0.0-alpha.12#b391948911356cbf8a91daa93314809c87411098"
+dependencies = [
+ "dojo_plugin",
+]
+
+[[package]]
+name = "dojo_phaser"
 version = "0.0.1"
 dependencies = [
  "dojo",
 ]
 
 [[package]]
-name = "dojo"
-version = "0.6.0"
-source = "git+https://github.com/dojoengine/dojo?tag=v0.7.0-alpha.5#328004d65bbbf7692c26f030b75fa95b7947841d"
-dependencies = [
- "dojo_plugin",
-]
-
-[[package]]
 name = "dojo_plugin"
-version = "0.3.11"
-source = "git+https://github.com/dojoengine/dojo?tag=v0.3.11#1e651b5d4d3b79b14a7d8aa29a92062fcb9e6659"
+version = "1.0.0-alpha.4"
+source = "git+https://github.com/dojoengine/dojo?rev=f15def33#f15def330c0d099e79351d11c197f63e8cc1ff36"

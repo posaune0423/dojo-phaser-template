@@ -1,0 +1,14 @@
+kind = "DojoContract"
+class_hash = "0x75552c6caa376a3dbc21f64a862a0020538c58a4a58f6e34e664455fe7df26"
+original_class_hash = "0x75552c6caa376a3dbc21f64a862a0020538c58a4a58f6e34e664455fe7df26"
+base_class_hash = "0x0"
+abi = "manifests/dev/base/abis/contracts/dojo_phaser-actions-54ace01d.json"
+reads = []
+writes = []
+init_calldata = []
+tag = "dojo_phaser-actions"
+systems = [
+    "spawn",
+    "move",
+]
+manifest_name = "dojo_phaser-actions-54ace01d"

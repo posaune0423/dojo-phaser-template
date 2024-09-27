@@ -1,0 +1,6 @@
+tag = "dojo_phaser-actions"
+writes = [
+    "dojo_phaser-Moves",
+    "dojo_phaser-Position",
+    "dojo_phaser-DirectionsAvailable",
+]

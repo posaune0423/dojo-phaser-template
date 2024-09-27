@@ -1,0 +1,17 @@
+kind = "DojoModel"
+class_hash = "0x37b1bd0b37ecaa7387fa886b2050ad0db35d3d0201f7835eed09d869136dd5d"
+original_class_hash = "0x37b1bd0b37ecaa7387fa886b2050ad0db35d3d0201f7835eed09d869136dd5d"
+abi = "manifests/dev/base/abis/models/dojo_phaser-Moved-1fa16895.json"
+tag = "dojo_phaser-Moved"
+qualified_path = "dojo_phaser::systems::actions::actions::moved"
+manifest_name = "dojo_phaser-Moved-1fa16895"
+
+[[members]]
+name = "player"
+type = "ContractAddress"
+key = true
+
+[[members]]
+name = "direction"
+type = "Direction"
+key = false
