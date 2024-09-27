@@ -5,11 +5,11 @@ import { ControllerOptions } from "@cartridge/controller";
 import { manifest } from "../../../dojoConfig";
 import { shortString } from "starknet";
 
-const contract = getContractByName(manifest, "pixelaw", "paint_actions");
+const contract = getContractByName(manifest, "dojo_phaser", "actions");
 if (!contract?.address) {
-  throw new Error("pixelaw paint_actions contract not found");
+  throw new Error("dojo_phaser actions contract not found");
 }
-const paint_action_contract_address = contract?.address;
+const action_contract_address = contract?.address;
 
 const ETH_TOKEN_ADDRESS = "0x49d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7";
 
@@ -17,17 +17,11 @@ const policies = [
   {
     target: ETH_TOKEN_ADDRESS,
     method: "approve",
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
   },
   {
-    target: import.meta.env.VITE_PUBLIC_FEE_TOKEN_ADDRESS,
-    method: "approve",
-  },
-  // paint_actions
-  {
-    target: paint_action_contract_address,
-    method: "interact",
-    description: "Interact with the paint_actions contract",
+    target: action_contract_address,
+    method: "move",
+    description: "Move",
   },
 ];
 
